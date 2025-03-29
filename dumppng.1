@@ -18,9 +18,11 @@ Generate C code from png image files for embedding images into C programs.
 $ ./dumppng star.png
 struct png_file_bytes {
 	int w, h, a;
-	char *bytes;
+	unsigned char bytes[];
 };
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpedantic"
 static struct png_file_bytes star = {
 	.w = 16,
 	.h = 16,
@@ -39,6 +41,7 @@ static struct png_file_bytes star = {
 	},
 };
 
+#pragma GCC diagnostic pop
 .fi
 .PP
 .SH NOTES
