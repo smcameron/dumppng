@@ -56,6 +56,7 @@ static int process_file(char *filename)
 		else
 			continue;
 	}
+	varname[j] = '\0';
 	free(fname);
 
 	char *bytes = png_utils_read_png_image(filename, 0, 0, 1, &pfb.w, &pfb.h, &pfb.a, whynot, sizeof(whynot));
