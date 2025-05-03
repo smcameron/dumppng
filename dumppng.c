@@ -65,7 +65,7 @@ static int process_file(char *filename)
 		return -1;
 	}
 
-	printf("static struct png_file_bytes %s = {\n", varname);
+	printf("static struct png_file_bytes %s = { /* from %s */\n", varname, fname);
 	printf("	.w = %d,\n", pfb.w);
 	printf("	.h = %d,\n", pfb.h);
 	printf("	.a = %d,\n", pfb.a);
