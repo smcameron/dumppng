@@ -98,6 +98,8 @@ int main(int argc, char *argv[])
 	if (argc < 2)
 		usage();
 
+	printf("/* This code was produced by dumppng.  See https://github.com/smcameron/dumppng */\n");
+
 	define_struct();
 
 	/* Suppress warnings about initializing flexible array members */
